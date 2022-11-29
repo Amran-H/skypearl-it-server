@@ -1,0 +1,14 @@
+[
+    {
+        "category_id": "01",
+        "category_name": "ACER"
+    },
+    {
+        "category_id": "02",
+        "category_name": "HP"
+    },
+    {
+        "category_id": "02",
+        "category_name": "DELL"
+    }
+]
