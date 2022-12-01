@@ -18,6 +18,8 @@ async function run() {
     try {
         const productCategories = client.db('skypearl-it').collection('categories');
         const product = client.db('skypearl-it').collection('products');
+        const userCollection = client.db('skypearl-it').collection('users');
+        const ordersCollection = client.db('skypearl-it').collection('orders');
 
         app.get('/product-categories', async (req, res) => {
             const query = {}
@@ -34,6 +36,13 @@ async function run() {
             const products = await cursor.toArray();
             res.send(products)
         });
+
+        app.post('/orders', async (req, res) => {
+            const order = req.body;
+            console.log(order);
+            const result = await ordersCollection.insertOne(order);
+            res.send(result);
+        })
 
     }
     finally {
